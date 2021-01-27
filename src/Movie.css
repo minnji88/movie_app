@@ -1,8 +1,6 @@
 /*--------------------
 Movies
 --------------------*/
-
-
 .movie{
 
 }
@@ -30,22 +28,21 @@ Movies
 .movie__data{
     margin-bottom: 20px;
 }
+.title__section{
+    display: flex;
+}
 .movie__title{
-    color: #525661;
-    margin-bottom: 4px;
-    font-size: 16px;
+    color: rgb(228, 222, 222);;
+    margin: 1px 1px 2px 0;
+    font-size: 20px;
 }
 .movie__year{
-    font-size: 14px;
-    opacity: .8;
+    display: none;
 }
 .movie__summary {
     display: none;
 }
-.movie__vote{
-
+.vote__section{
+    display: flex;
 }
 
-/*--------------------
-Detail
---------------------*/

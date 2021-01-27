@@ -1,0 +1,34 @@
+.like-button {
+    display: inline-block;
+    position: relative;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 15px;
+    margin-top: -2px;
+    border: none;
+    outline:none;
+    // border: 1px solid black;
+    &::before {
+      font-size: 1em;
+      color: rgb(228, 222, 222);
+      // content: '♥';
+      content: '🤍';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &::after {
+      font-size: 1em;
+      color: rgba(254, 106, 90, 0.947);
+      content: '🧡';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.2s;
+    }
+    &.liked::after {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+  }
