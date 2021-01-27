@@ -1,0 +1,51 @@
+/*--------------------
+Movies
+--------------------*/
+
+
+.movie{
+
+}
+.movie .movie__image{
+    width: 100%;
+/* height: 100%; */
+}
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px 40px;
+}
+.movies .movie{
+    width: 250px;
+    margin-left: 50px;
+}
+.movie .movie__image{
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 6px;
+}
+.movie__image.active {
+    opacity: 0;
+}
+.movie__data{
+    margin-bottom: 20px;
+}
+.movie__title{
+    color: #525661;
+    margin-bottom: 4px;
+    font-size: 16px;
+}
+.movie__year{
+    font-size: 14px;
+    opacity: .8;
+}
+.movie__summary {
+    display: none;
+}
+.movie__vote{
+
+}
+
+/*--------------------
+Detail
+--------------------*/

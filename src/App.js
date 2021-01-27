@@ -8,23 +8,21 @@ import './App.css'
 class App extends React.Component {
   state = {
     isLoading: true,
-    movies: []
+    results: []
   };
   // 비동기 
   getMovies = async () => {
-    const { 
-      data : { 
-        data : { movies }}
-      } = await axios.get("https://yts-proxy.now.sh/list_movies.json?sort_by=rating");
-    // console.log(movies);
-    this.setState({ movies, isLoading: false })
+
+      const { data : {results}} = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=9da4182c0864274f3492c1fe4957b333");
+      console.log(results);
+      this.setState({ results, isLoading: false })
   };
   componentDidMount() {
     this.getMovies();
   }
 
   render() {
-    const { isLoading, movies } = this.state;
+    const { isLoading, results } = this.state;
     return (
     <section className="container"> 
       { isLoading ? (
@@ -33,16 +31,17 @@ class App extends React.Component {
       </div>
       ) : (
       <div className="movies">
-        { movies.map(movie => (
+        { results.map(movie => (
           <Movie 
           // 유일해야하므로 id 를 줘야한다.
           key={movie.id}
           id={movie.id} 
-          year={movie.year} 
+          year={movie.release_date} 
           title={movie.title} 
-          summary={movie.summary} 
-          poster={movie.medium_cover_image}
-          genres={movie.genres}
+          summary={movie.overview} 
+          poster= {movie.poster_path}
+          // genres={movie.genres}
+          vote = {movie.vote_average}
           />
       ))}
       </div>
