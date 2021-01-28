@@ -1,25 +1,3 @@
-*{
-    padding: 0;
-    margin: 0;
-}
-body {
-    color: white;
-    background-color: rgb(20, 21, 23);
-    height: 100%;
-    font-weight: 400;
-    font-family: Roboto, "Noto Sans KR", "Apple SD Gothic Neo", "Nanum Gothic", "Malgun Gothic", sans-serif;
-    box-sizing: border-box;
-}  
-/*--------------------
-Header
---------------------*/
-header{
-    background: url("https://hdqwalls.com/download/stranger-things-season-3-2019-4k-5k-38-1920x1080.jpg") center /cover no-repeat;
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
 .menu-bar{
     border-radius: 25px;
     height: fit-content;
@@ -41,6 +19,14 @@ header{
     position: relative;
     cursor: pointer;
     white-space: nowrap;
+    text-decoration: none;
+}
+.menu-bar .link{
+    text-decoration: none;
+}
+.menu-bar .link:visited{
+    text-decoration: none;
+    color: white;
 }
 .menu-bar li::before {
     content: " ";
@@ -60,19 +46,4 @@ header{
 }
 .menu-bar li:hover {
     color: black;
-}
-/*--------------------
-Movies
---------------------*/
-h2 {
-    color:rgb(228, 222, 222);
-    font-size: 22px;
-    box-shadow: inset 0 1px 0px rgba(0, 0, 0, 0.4);
-    padding: 20px 50px 0;
-    margin-left: 20px;
-    margin-bottom: 30px;
-}
-
-.movies{
-    margin-left: 20px;
 }

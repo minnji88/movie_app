@@ -5,8 +5,11 @@ import './Movie.scss'
 
 function Movie({id, year, title, summary, poster}){
     return (  
+
 <div className ="movie card">
-    <div className="wrapper" style={{backgroundImage: "url(" + "https://image.tmdb.org/t/p/original/" + poster+ ")"}} >
+
+    <div className="wrapper" style={{backgroundImage: 
+        `url(https://image.tmdb.org/t/p/original/${poster})`}}>
       <div className="header">
         <ul className="menu-content">
           <Vote />
@@ -22,6 +25,7 @@ function Movie({id, year, title, summary, poster}){
       </div>
     </div>
     </div>
+
   );
 }
 
