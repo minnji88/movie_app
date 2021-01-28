@@ -11,7 +11,7 @@ class App extends React.Component {
     results: []
   };
   // 비동기 
-  getMovies = async () => {
+  getMovies = async () => { 
 
       const { data : {results}} = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=9da4182c0864274f3492c1fe4957b333");
       console.log(results);
@@ -40,8 +40,6 @@ class App extends React.Component {
           title={movie.title} 
           summary={movie.overview} 
           poster= {movie.poster_path}
-          // genres={movie.genres}
-          vote = {movie.vote_average}
           />
       ))}
       </div>

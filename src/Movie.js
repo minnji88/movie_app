@@ -1,37 +1,28 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import Vote from './Vote'
-import './Movie.css'
+import Vote from './Vote';
+import './Movie.scss'
 
-{/* <Vote /> */}
-
-function Movie({id, year, title, summary, poster, vote}){
-    return (
-    <div className="movie">
-        <img src={"https://image.tmdb.org/t/p/original/"+poster} alt={title} title={title} className="movie__image"/>
-        <div className="movie__data">
-            <div className="title__section">
-                <div className="movie__title">{title}</div>
-            </div>
-            <span className="movie__year">{year}</span>
-            <ul className="menu-content">
-                <li><span className="fa fa-heart-o">{vote * 10}</span></li>
-            </ul>
-
-            {/* <ul className="genres">
-                {genres.map((genre, index) => (
-                    <li key={index} className="genres__genre">{genre}</li>
-                ))}
-            </ul> */}
-            {/* <div className="vote__section">
-                <Vote />
-                <h4 className="movie__vote">{vote * 10}</h4>
-                <span>℃</span>
-            </div> */}
-            <div className="movie__summary">{summary}</div>
+function Movie({id, year, title, summary, poster}){
+    return (  
+<div className ="movie card">
+    <div className="wrapper" style={{backgroundImage: "url(" + "https://image.tmdb.org/t/p/original/" + poster+ ")"}} >
+      <div className="header">
+        <ul className="menu-content">
+          <Vote />
+        </ul>
+      </div>
+      <div className="data">
+        <div className="content">
+          <h1 className="movie__title">{title}</h1>
+          <h4 className="movie__year">{year}</h4>
+          <br/>
+          <p className="movie__summary">{summary.slice(0, 180)}</p>
+        </div>
+      </div>
     </div>
     </div>
-    );
+  );
 }
 
 Movie.propTypes = {
